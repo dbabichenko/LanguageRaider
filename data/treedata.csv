@@ -1,0 +1,15 @@
+name,parent,statementText,isCorrect,agentName,agentType
+4,1,Buon giorno,1,waiter,npc
+5,2,Buon giorno,1,waiter,npc
+root, ,Start,1,waiter,npc
+1,root,Buon giorno,1,customer,player
+2,root,Salve,1,customer,player
+3,root,Ciao,0,customer,player
+6,4,(2+) abbiamo prenotato un tavolo per due (name),1,customer,player
+7,4,(1) Ho una prenotazione a nome…(name),1,customer,player
+8,4,(1+) Ha un tavolo,1,customer,player
+9,4,"(2+) Avete un tavolo per 2, 3…",1,customer,player
+10,5,(2+) abbiamo prenotato un tavolo per due (name),1,customer,player
+11,5,(1) Ho una prenotazione a nome…(name),1,customer,player
+12,5,(1+) Ha un tavolo,1,customer,player
+13,5,"(2+) Avete un tavolo per 2, 3…",1,customer,player

@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/bubbles.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/game.css" />
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="js/gameworld.js"></script>
+        <script>
+
+            var onSidewalk = true;
+            var onRoad = false;
+            var onCrosswalk = false;
+            
+
+            $(document).ready(function(){
+                $scene = $("#scene");
+
+                for(var i = 0; i<5; i++){
+                    var x = 0;
+                    var y = (i * HORIZONTAL_MULTIPLIER) + POSITION_OFFSET;
+                    gameObjects.push(renderGameObject("sidewalk_horizontal_" + i, "sidewalk_horizontal", x, y, $scene));
+
+
+                    y = (i * HORIZONTAL_MULTIPLIER) - POSITION_OFFSET;
+                    gameObjects.push(renderGameObject("sidewalk_horizontal_opposite_" + i, "sidewalk_horizontal", x, y, $scene));
+                    
+                    x = (i * VERTICAL_MULTIPLIER) + POSITION_OFFSET;
+                    y = 0;
+                    gameObjects.push(renderGameObject("sidewalk_vertical_" + i, "sidewalk_vertical", x, y, $scene));
+
+                    
+                    x = (i * VERTICAL_MULTIPLIER) - POSITION_OFFSET;
+                    gameObjects.push(renderGameObject("sidewalk_vertical_opposite_" + i, "sidewalk_vertical", x, y, $scene));
+                }
+
+                for(var i = 0; i<5; i++){
+                    var x = 0;
+                    var y = i * HORIZONTAL_MULTIPLIER;
+
+                    gameObjects.push(renderGameObject("road_horizontal_" + i, "road_horizontal", x, y, $scene));
+
+                    x = i * VERTICAL_MULTIPLIER;
+                    y = 0;
+                    gameObjects.push(renderGameObject("road_vertical_" + i, "road_vertical", x, y, $scene));
+                    
+                } 
+                
+                
+                var carSprites = ['red_car.png','blue_car.png','green_car.png','pink_car.png','yellow_car.png'];
+                for(var i = 0; i<5; i++){
+                    var car = renderInteractableObject('car_' + i, 'car', 'images/' + carSprites[i], 0, (i * 120), $scene);
+                    gameObjects.push(car);
+                    setInterval(autoMoveObject, Math.floor(Math.random() * 10), car);
+                    moveDirection['car_' + i] = 1;
+
+                }
+
+                $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
+                // gameObjects.push($player);
+                $(document).keydown(movePlayer);
+                setInterval(checkCollisions, 100, $player);
+
+                gameObjects.push(renderInteractableObject('pizzeria', 'building', 'images/pizzeria.png', 40, 40, $scene));
+                gameObjects.push(renderInteractableObject('bookstore', 'building', 'images/bookstore.png', 90, 48, $scene));
+
+                $cop = renderInteractableObject('cop', 'character player', 'images/cop.png', 400, 258, $scene);
+                gameObjects.push($cop);
+                flipObjectX($cop, -1);
+                
+
+                
+
+            });
+
+            
+        </script>
+    </head>
+    <body>
+        <div id="scene">
+            <!--
+            <img src="images/customer.png" style="height: 350px;" class="character player" id="customer" />
+            <img src="images/waiter.png" style="height: 350px;" class="character npc" id="waiter" />
+
+            <div id="speechBubble" class="speech triangle-isosceles">Hello</div>
+            
+            <div class="road" id="road1"></div>
+            <div class="lawn" id="lawn1"></div>
+            -->
+        </div>
+        <div id="response">
+            <input type='text' id="responseText" onkeypress="captureTextInput(event);" />
+        </div>
+        <div class="scoreboard" id="scoreboard">Score: 0 points</div>
+        
+    </body>
+    
+    <!--script src="js/conversation.js"></script-->
+    <script src="js/stt.js"></script>
+</html>

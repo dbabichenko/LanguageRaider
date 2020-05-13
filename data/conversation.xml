@@ -1,0 +1,190 @@
+<conversation>
+	<turn parents="0" agent="waiter" id="1">
+        <phrases>
+            <phrase iscorrect="true" value="Buon giono" />
+        <phrases>
+    </turn>
+    <turn parents="1" agent="customer" id="2">
+        <phrases>
+            <phrase iscorrect="true" value="Buon giono" />
+            <phrase iscorrect="true" value="Salve" />
+            <phrase iscorrect="true" value="Ciao" />
+            <phrase iscorrect="false" value="Arrivederci" />
+            <phrase iscorrect="false" value="Grazie" />
+        </phrases>
+    <turn> 
+	<turn parents="2" agent="waiter" id="3" comment="do you have a reservation?">
+        <phrases>
+            <phrase iscorrect="true" value="Ha una prenotazione?" />
+        </phrases
+    </turn>
+	<turn parents="3" agent="customer" id="4" comment="if learner has reservation">
+        <phrases>
+            <phrase iscorrect="true" value="Ho una prenotazione a nome [name]" />
+            <phrase iscorrect="true" value="Abbiamo prenotato un tavolo per due" />
+            <phrase iscorrect="false" value="Ho fame" />
+            <phrase iscorrect="false" value="Voglio mangiare" />
+        </phrases>
+    </turn>
+	<turn parents="3" agent="customer" id="5" comment="if learner doesn't have a reservation">
+        <phrases>
+            <phrase iscorrect="true" value="Ha un tavolo?" />
+            <phrase iscorrect="true" value="Ha un tavolo per 2?" />
+            <phrase iscorrect="false" value="Ho fame" />
+            <phrase iscorrect="false" value="Voglio mangiare" />
+        </phrases>
+    </turn>
+    <turn parents="5" agent="waiter" id="6" comment="Waiter says that they do not have the table">
+        <phrases>
+            <phrase iscorrect="true" value="No, mi dispiace" />
+            <phrase iscorrect="true" value="No, ci dispiace" />
+        </phrases>
+    </turn>
+	<turn parents="6" agent="customer" id="7" comment="If no table, learner answers">
+        <phrases>
+            <phrase iscorrect="true" value="Arriverderci, grazie" />
+            <phrase iscorrect="true" value="Grazie" />
+            <phrase iscorrect="true" value="Ciao" />
+            <phrase iscorrect="false" value="Buon giorno" />
+            <phrase iscorrect="false" value="Prego" />
+        </phrases>
+    </turn>
+    <turn parents="3,7" agent="waiter" id="8" comment="Waiter says that they have the table">
+        <phrases>
+            <phrase iscorrect="true" value="Prego" />
+            <phrase iscorrect="true" value="Accomodatevi" />
+            <phrase iscorrect="true" value="Ecco il tavolo" />
+        </phrases>
+    </turn>
+    <turn parents="8" agent="customer" id="9" comment="Learner asks for the menu">
+        <phrases>
+            <phrase iscorrect="true" value="Mi porta il menu per favore" />
+            <phrase iscorrect="true" value="Ci puo potare il menu per favore?" />
+            <phrase iscorrect="true" value="Mi porta il menu del giorno?" />
+            <phrase iscorrect="true" value="Mi porta il menu per favore" />
+            <phrase iscorrect="false" value="Mi porta la pasta?" />
+            <phrase iscorrect="false" value="Mi porta il pesce" />
+        </phrases>
+    </turn>
+	<turn parents="9" agent="waiter" id="10" comment="Waiter answers">
+        <phrases>
+            <phrase iscorrect="true" value="Prego" />
+            <phrase iscorrect="true" value="Eccolo" />
+            <phrase iscorrect="true" value="Ecco il menu" />
+        </phrases>
+    </turn>
+	<turn parents="10" agent="waiter" id="11" comment="Waiter hands menu to customer">
+        <actions>
+            <action value="hand menu to customer" />
+        </actions>
+    </turn>
+    <turn parents="11" agent="waiter" id="12" comment="Waiter asks">
+        <phrases>
+            <phrase iscorrect="true" value="Vuole ordinare" />
+            <phrase iscorrect="true" value="Volete ordinare" />
+        </phrases>
+    </turn>
+    <turn parents="12" agent="system" id="13" comment="Display food menu">
+        <actions>
+            <action value="show food menu" />
+        </actions>
+    </turn>
+    <turn parents="13" agent="customer" id="14" comment="Learner orders from food menu">
+        <phrases>
+            <phrase iscorrect="true" value="Vorrei [food menu item]" />
+            <phrase iscorrect="true" value="Mi porta  [food menu item]" />
+            <phrase iscorrect="true" value="Per me  [food menu item]" />
+            <phrase iscorrect="incorrect" value="[food menu item]" />
+            <phrase iscorrect="incorrect" value="Un bicchiere di vino" />
+        </phrases>
+    </turn>
+    <turn parents="14" agent="waiter" id="15" comment="Waiter asks 'Do you want to order drinks'">
+        <phrases>
+            <phrase iscorrect="true" value="E da bere" />
+        </phrases>
+    </turn>
+    <turn parents="15" agent="system" id="16" comment="Display drink menu">
+        <actions>
+            <action value="show drink menu" />
+        </actions>
+    </turn>
+	<turn parents="16" agent="customer" id="17" comment="Learner orders drinks from drink menu">
+        <phrases>
+            <phrase iscorrect="true" value="Vorrei [drink menu item]" />
+            <phrase iscorrect="true" value="Mi porta  [drink menu item]" />
+            <phrase iscorrect="true" value="Per me  [drink menu item]" />
+            <phrase iscorrect="false" value="[drink menu item]" />
+            <phrase iscorrect="false" value="Un piatto di pasta" />
+        </phrases>
+    </turn>
+	<turn parents="17" agent="waiter" id="18" comment="Waiter returns and asks if learner wants fruit or desert">
+        <phrases>
+            <phrase iscorrect="true" value="Desidera dolce o frutta" />
+            <phrase iscorrect="true" value="Desiderate dolce o frutta" />
+        </phrases>
+    </turn>
+	<turn parents="18" agent="system" id="19" comment="Display desert menu">
+        <actions>
+            <action value="show desert menu" />
+        </actions>
+    </turn>
+    <turn parents="19" agent="customer" id="20" comment="Learner orders desert from desert menu">
+        <phrases>
+            <phrase iscorrect="true" value="Vorrei [desert menu item]" />
+            <phrase iscorrect="true" value="Mi porta  [desert menu item]" />
+            <phrase iscorrect="true" value="Per me  [desert menu item]" />
+            <phrase iscorrect="true" value="No, grazie" />
+            <phrase iscorrect="true" value="No grazie ci porta il conto per favore" />
+            <phrase iscorrect="false" value="[desert menu item]" />
+            <phrase iscorrect="false" value="Un piatto di pasta" />
+        </phrases>
+    </turn>
+	<turn parents="20" agent="waiter" id="21" comment="Waiter asks if learner wants coffee or liquor">
+        <phrases>
+            <phrase iscorrect="true" value="Desidera coffee" />
+            <phrase iscorrect="true" value="Desiderate coffee" />
+        </phrases>
+    </turn>
+	<turn parents="21" agent="system" id="22" comment="Display liquor menu">
+        <actions>
+            <action value="show liquor menu" />
+        </actions>
+    </turn>
+	<turn parents="22" agent="customer" id="23" comment="Learner orders coffee or liquor from menu">
+        <phrases>
+            <phrase iscorrect="true" value="Vorrei [desert menu item]" />
+            <phrase iscorrect="true" value="Mi porta  [desert menu item]" />
+            <phrase iscorrect="true" value="Per me  [desert menu item]" />
+            <phrase iscorrect="true" value="No, grazie" />
+            <phrase iscorrect="true" value="No grazie ci porta il conto per favore" />
+            <phrase iscorrect="false" value="[desert menu item]" />
+            <phrase iscorrect="false" value="Un piatto di pasta" />
+        </phrases>
+    </turn>
+	<turn parents="23" agent="waiter" id="24" comment="Waiter brings the check">
+        <actions>
+            <action value="bring check" />
+        </actions>
+    </turn>
+    <turn parents="24" agent="customer" id="25" comment="Learner pays check">
+        <actions>
+            <action value="pay check" />
+        </actions>
+    </turn>
+	<turn parents="25" agent="waiter" id="26" comment="Waiter says good bye">
+        <phrases>
+            <phrase iscorrect="true" value="Arriverderci e grazie" />
+            <phrase iscorrect="true" value="Arriverderci a presto" />
+        </phrases>
+    </turn>
+	<turn parents="26" agent="waiter" id="27" comment="Learner responds">
+        <phrases>
+            <phrase iscorrect="true" value="Arriverderci" />
+            <phrase iscorrect="true" value="Grazie" />
+            <phrase iscorrect="true" value="A presto" />
+            <phrase iscorrect="false" value="Buon giorno" />
+            <phrase iscorrect="false" value="Buona sera" />
+        </phrases>
+    </turn>
+	
+</conversation>

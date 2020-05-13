@@ -1,0 +1,67 @@
+[
+  {
+    "name": "root",
+    "statementText": "Start",
+    "agent": "game",
+    "agentType": "system",
+    "parent":"null",
+    "isCorrect": 1,
+    "children":[
+      {
+        "name": "_1",
+        "statementText": "Hello",
+        "agent": "waiter",
+        "agentType": "npc",
+        "isCorrect": 1,
+        "parent": "root",
+        "children": [
+          {
+            "name": "_2_A",
+            "parent": "_1",
+            "agent": "customer",
+            "agentType": "player",
+            "isCorrect": 1,
+            "statementText": "Hello",
+            "children": [
+              {
+                "name": "_3_A",
+                "agent": "waiter",
+                "agentType": "npc",
+                "statementText": "Do you have a reservation?",
+                "isCorrect": 1,
+                "parent": "_2_A",
+                "children": [
+                    {
+                      "name": "_4_A",
+                      "agent": "customer",
+                      "agentType": "player",
+                      "parent": "_3_A",
+                      "isCorrect": 1,
+                      "statementText": "Yes"
+                    },
+                    {
+                      "name": "_4_B",
+                      "agent": "customer",
+                      "agentType": "player",
+                      "parent": "_3_A",
+                      "isCorrect": 1,
+                      "statementText": "No"
+                    }
+                ]
+                
+              }
+            ]
+          },
+          {
+            "name": "_2_B",
+            "agent": "customer",
+            "agentType": "player",
+            "statementText": "Goodbye",
+            "isCorrect": 0,
+            "parent": "_1"
+          }
+        ]
+      }
+    ]
+  }
+]

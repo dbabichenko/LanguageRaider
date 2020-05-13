@@ -1,0 +1,46 @@
+[
+  {
+    "name": "root",
+    "statementText": "Start",
+    "agent": "game",
+    "agentType": "system",
+    "parent":"null",
+    "isCorrect": 1,
+    "children":[
+      {
+        "name": "_1",
+        "statementText": "Buon giorno",
+        "agent": "waiter",
+        "agentType": "npc",
+        "isCorrect": 1,
+        "parent": "root",
+        "children": [
+            {
+                "name": "_2",
+                "statementText": "Buon giorno",
+                "agent": "customer",
+                "agentType": "player",
+                "isCorrect": 1,
+                "parent": "_1"
+            },
+            {
+                "name": "_2",
+                "statementText": "Salve",
+                "agent": "customer",
+                "agentType": "player",
+                "isCorrect": 1,
+                "parent": "_1"
+            },
+            {
+                "name": "_2",
+                "statementText": "Ciao",
+                "agent": "customer",
+                "agentType": "player",
+                "isCorrect": 0,
+                "parent": "_1"
+            }
+        ]
+      }
+    ]
+  }
+]
