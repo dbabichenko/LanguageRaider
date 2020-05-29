@@ -7,26 +7,26 @@
         <script src="js/speech.js"></script>
         <script>
             $(document).ready(function(){
-                
+
                 // positionGameCharacter("customer", 50);
                 // positionGameCharacter("waiter", 50);
 
-                getAgentVoices();   
+                getAgentVoices();
 
                 $scene = $("#pizzeria");
                 $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
                 $(document).keydown(movePlayer);
-                
+
                 $waiter = renderInteractableObject('waiter', 'character npc', 'images/waiter_male.png', 350, 300, $scene);
                 flipObjectX($waiter, -1);
                 gameObjects.push($waiter);
-                
+
                 $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 10, 10, $scene);
                 gameObjects.push($oven);
 
-                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 100, 100, $scene);
+                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 600, 600, $scene);
                 gameObjects.push($table1);
-                
+
                 $("#speechBubble").css({
                     "visibility" : "hidden",
                     "display" : "none"
@@ -38,10 +38,10 @@
                     if(data){
                         next(data.statements[0]);
                         // console.log(data);
-                        
-                    
-                        
-                        
+
+
+
+
                     }
                 });
             });
@@ -49,14 +49,14 @@
     </head>
     <body>
         <div id="pizzeria">
-           
+
         </div>
         <div id="response">
             <input type='text' id="responseText" onkeypress="captureTextInput(event);" />
         </div>
         <div class="scoreboard" id="scoreboard">Score: 0 points</div>
         <div id="speechBubble" class="speech triangle-isosceles">Hello</div>
-        
+
     </body>
-    
+
 </html>
