@@ -21,10 +21,19 @@
                 flipObjectX($waiter, -1);
                 gameObjects.push($waiter);
 
-                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 10, 10, $scene);
+                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 500, 10, $scene);
                 gameObjects.push($oven);
 
                 $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 100, 100, $scene);
+                gameObjects.push($table1);
+
+                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 100, 250, $scene);
+                gameObjects.push($table1);
+
+                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 300, 100, $scene);
+                gameObjects.push($table1);
+
+                $doorway = renderInteractableObject('doorway', 'furniture', 'images/doorway.jpg', 10, 10, $scene);
                 gameObjects.push($table1);
 
                 $("#speechBubble").css({

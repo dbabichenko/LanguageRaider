@@ -5,7 +5,7 @@ const POSITION_OFFSET = 20;
 var moveInterval = 0;
 var gameObjects = [];
 var moveDirection = {};
-            
+
 function renderGameObject(gameObjectID, gameObjectClass, x, y, parentObject){
     $obj = $("<div></div>");
     $obj.attr("class", gameObjectClass);
@@ -25,8 +25,8 @@ function renderInteractableObject(gameObjectID, gameObjectClass, gameObjectSrc, 
         "id" : gameObjectID,
         "src" : gameObjectSrc
     });
-    
-    
+
+
     $obj.css({
         'left' : x + 'px',
         'top' : y + "px"
@@ -40,18 +40,18 @@ function checkCollisions(obj){
     onSidewalk, onRoad, onCrosswalk = false;
     var rect1 = obj[0].getBoundingClientRect();
     var area1 = Math.abs(rect1.right - rect1.left) * Math.abs(rect1.bottom - rect1.top);
-    for(var i = 0; i<gameObjects.length; i++){   
+    for(var i = 0; i<gameObjects.length; i++){
         var rect2 = gameObjects[i][0].getBoundingClientRect();
-        var overlap = !(rect1.right < rect2.left || 
-            rect1.left > rect2.right || 
-            rect1.bottom < rect2.top || 
+        var overlap = !(rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
             rect1.top > rect2.bottom)
 
         if(overlap){
             var x_overlap = Math.max(0, Math.min(rect1.right, rect2.right) - Math.max(rect1.left, rect2.left));
             var y_overlap = Math.max(0, Math.min(rect1.bottom, rect2.bottom) - Math.max(rect1.top, rect2.top));
             var overlapArea = x_overlap * y_overlap;
-            
+
             var intersectionRatio = overlapArea / area1;
             if(intersectionRatio >= 0.75){
                 // console.log(gameObjects[i].attr("id") + ": " + intersectionRatio);
@@ -70,10 +70,10 @@ function checkCollisions(obj){
                     // console.log("EXIT");
                     document.location.href = "restaurant1.html"
                 }
-                
+
             }
         }
-        
+
     }
 }
 
@@ -115,9 +115,9 @@ function movePlayer(evt){
     var y = parseInt($player.css("top").replace('px'));
     // console.log(evt.keyCode);
     switch(evt.keyCode){
-        case 38: 
+        case 38:
             y = y - 5;
-            break; 
+            break;
         case 40:
             y = y + 5;
             break;
@@ -136,12 +136,12 @@ function movePlayer(evt){
     });
     // checkCollisions($player);
 
-    
+
 }
 
 function movePlayerByTextInput($player, dir, delta){
     var pos = parseInt($player.css(dir).replace('px'));
-    
+
     $player.css(dir, (pos + delta) + "px");
 }
 
@@ -151,7 +151,7 @@ function captureTextInput(evt){
         processTextInput($in.val());
         $in.val('');
     }
-    
+
 }
 
 function processTextInput(txt){
@@ -188,10 +188,10 @@ function processTextInput(txt){
             clearInterval(moveInterval);
             console.log('Stop');
             break;
-        
+
 
     }
-    
+
 }
 
 function hideSpeechBubble(){
