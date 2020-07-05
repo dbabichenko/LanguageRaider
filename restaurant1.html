@@ -21,40 +21,62 @@
                 flipObjectX($waiter, -1);
                 gameObjects.push($waiter);
 
-                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 700, 50, $scene);
+                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 150, 600, $scene);
                 gameObjects.push($oven);
+                oven.style.width = 50 + "px";
 
-                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 100, 200, $scene);
+                $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 300, 100, $scene);
                 gameObjects.push($table1);
 
-                $table2 = renderInteractableObject('chair2', 'furniture', 'images/table_chairs.png', 100, 350, $scene);
-                gameObjects.push($table1);
+                // chair1.style.width = 200 + "px";
 
-                $table3 = renderInteractableObject('chair3', 'furniture', 'images/table_chairs.png', 300, 200, $scene);
-                gameObjects.push($table1);
+                $table2 = renderInteractableObject('chair2', 'furniture', 'images/table_chairs.png', 500, 100, $scene);
+                gameObjects.push($table2);
 
-                $table4 = renderInteractableObject('chair4', 'furniture', 'images/table_chairs.png', 100, 500, $scene);
-                gameObjects.push($table1);
+                $table3 = renderInteractableObject('chair3', 'furniture', 'images/table_chairs.png', 700, 100, $scene);
+                gameObjects.push($table3);
 
-                $table5 = renderInteractableObject('chair5', 'furniture', 'images/table_chairs.png', 400, 425, $scene);
-                gameObjects.push($table1);
+                $table4 = renderInteractableObject('chair4', 'furniture', 'images/table_chairs.png', 300, 200, $scene);
+                gameObjects.push($table4);
 
-                $table6 = renderInteractableObject('chair6', 'furniture', 'images/table_chairs.png', 400, 550, $scene);
-                gameObjects.push($table1);
+                $table5 = renderInteractableObject('chair5', 'furniture', 'images/table_chairs.png', 500, 200, $scene);
+                gameObjects.push($table5);
 
-                $sink = renderInteractableObject('sink', 'furniture', 'images/sink.png', 800, 50, $scene);
-                gameObjects.push($table1);
+                $table6 = renderInteractableObject('chair6', 'furniture', 'images/table_chairs.png', 700, 200, $scene);
+                gameObjects.push($table6);
 
-                $menuboard = renderInteractableObject('board', 'furniture', 'images/blackboard.png', 500, 50, $scene);
-                gameObjects.push($table1);
+                $table7 = renderInteractableObject('chair7', 'furniture', 'images/table_chairs.png', 500, 300, $scene);
+                gameObjects.push($table7);
 
-                // $doorway = renderInteractableObject('doorway', 'furniture', 'images/doorway.jpg', 10, 10, $scene);
-                // gameObjects.push($table1);
+                $table8 = renderInteractableObject('chair8', 'furniture', 'images/table_chairs.png', 700, 300, $scene);
+                gameObjects.push($table8);
 
-                $("#speechBubble").css({
-                    "visibility" : "hidden",
-                    "display" : "none"
-                });
+                $table9 = renderInteractableObject('chair9', 'furniture', 'images/table_chairs.png', 500, 400, $scene);
+                gameObjects.push($table9);
+
+                $table10 = renderInteractableObject('chair10', 'furniture', 'images/table_chairs.png', 700, 400, $scene);
+                gameObjects.push($table10);
+
+                $sink = renderInteractableObject('sink', 'furniture', 'images/sink.png', 400, 600, $scene);
+                gameObjects.push($sink);
+
+                $brickwall = renderInteractableObject('brickwall', 'furniture', 'images/brickwall.jpg', 100, 500, $scene);
+                gameObjects.push($brickwall);
+                brickwall.style.width = 400 + "px";
+
+                $kitchenfloor = renderInteractableObject('kitchenfloor', 'furniture', 'images/kitchenfloor.jpg', 100, 550, $scene);
+                gameObjects.push($kitchenfloor);
+                kitchenfloor.style.width = 400 + "px";
+
+                $doorway = renderInteractableObject('doorway', 'furniture', 'images/doorway.jpg', 10, 10, $scene);
+                gameObjects.push($doorway);
+                doorway.style.width = 50 + "px";
+                // $menuboard = renderInteractableObject('menuboard', 'restaurantObjects', 'images/blackboard.png', 50, 50, $scene);
+                // gameObjects.push($menuboard);
+                //
+                // menuboard.style.width = 200 + "px";
+                // menuboard.style.height = 100 + "px";
+
 
                 // var url = "data/conversation.json";
                 var url = "rest/statements.php?parentID=";
@@ -73,9 +95,6 @@
     </head>
     <body>
         <div id="pizzeria">
-          <div class = "brick">
-            <img src = "images/brickwall.jpg" alt="brick wall">
-        </div>
         </div>
         <div id="response">
             <input type='text' id="responseText" onkeypress="captureTextInput(event);" />
