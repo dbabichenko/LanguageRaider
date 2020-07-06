@@ -158,9 +158,3 @@ body{ /* ...or body.dialogShowing */
     position: absolute;
     max-height: 50px;
 }
-
-.brick{
-  width: 100%;
-  height: 20px;
-  position: absolute;
-}

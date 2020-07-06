@@ -21,10 +21,6 @@
                 flipObjectX($waiter, -1);
                 gameObjects.push($waiter);
 
-                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 150, 600, $scene);
-                gameObjects.push($oven);
-                oven.style.width = 50 + "px";
-
                 $table1 = renderInteractableObject('chair1', 'furniture', 'images/table_chairs.png', 300, 100, $scene);
                 gameObjects.push($table1);
 
@@ -57,26 +53,48 @@
                 $table10 = renderInteractableObject('chair10', 'furniture', 'images/table_chairs.png', 700, 400, $scene);
                 gameObjects.push($table10);
 
-                $sink = renderInteractableObject('sink', 'furniture', 'images/sink.png', 400, 600, $scene);
-                gameObjects.push($sink);
-
                 $brickwall = renderInteractableObject('brickwall', 'furniture', 'images/brickwall.jpg', 100, 500, $scene);
                 gameObjects.push($brickwall);
-                brickwall.style.width = 400 + "px";
+                brickwall.style.width = 300 + "px";
 
                 $kitchenfloor = renderInteractableObject('kitchenfloor', 'furniture', 'images/kitchenfloor.jpg', 100, 550, $scene);
                 gameObjects.push($kitchenfloor);
-                kitchenfloor.style.width = 400 + "px";
+                kitchenfloor.style.width = 100 + "px";
+                $kitchenfloor2 = renderInteractableObject('kitchenfloor2', 'furniture', 'images/kitchenfloor.jpg', 200, 550, $scene);
+                gameObjects.push($kitchenfloor2);
+                kitchenfloor2.style.width = 100 + "px";
+                $kitchenfloor3 = renderInteractableObject('kitchenfloor3', 'furniture', 'images/kitchenfloor.jpg', 300, 550, $scene);
+                gameObjects.push($kitchenfloor3);
+                kitchenfloor3.style.width = 100 + "px";
+                $kitchenfloor4 = renderInteractableObject('kitchenfloor4', 'furniture', 'images/kitchenfloor.jpg', 100, 600, $scene);
+                gameObjects.push($kitchenfloor4);
+                kitchenfloor4.style.width = 100 + "px";
+                $kitchenfloor5 = renderInteractableObject('kitchenfloor5', 'furniture', 'images/kitchenfloor.jpg', 200, 600, $scene);
+                gameObjects.push($kitchenfloor5);
+                kitchenfloor5.style.width = 100 + "px";
+                $kitchenfloor6 = renderInteractableObject('kitchenfloor6', 'furniture', 'images/kitchenfloor.jpg', 300, 600, $scene);
+                gameObjects.push($kitchenfloor6);
+                kitchenfloor6.style.width = 100 + "px";
+
+                $oven = renderInteractableObject('oven', 'furniture', 'images/pizza_oven.png', 150, 550, $scene);
+                gameObjects.push($oven);
+                oven.style.width = 50 + "px";
+
+                $sink = renderInteractableObject('sink', 'furniture', 'images/sink.png', 300, 550, $scene);
+                gameObjects.push($sink);
 
                 $doorway = renderInteractableObject('doorway', 'furniture', 'images/doorway.jpg', 10, 10, $scene);
                 gameObjects.push($doorway);
                 doorway.style.width = 50 + "px";
-                // $menuboard = renderInteractableObject('menuboard', 'restaurantObjects', 'images/blackboard.png', 50, 50, $scene);
-                // gameObjects.push($menuboard);
-                //
-                // menuboard.style.width = 200 + "px";
-                // menuboard.style.height = 100 + "px";
 
+                $window = renderInteractableObject('window', 'furniture', 'images/window.jpg', 200, 10, $scene);
+                gameObjects.push($window);
+
+                $window2 = renderInteractableObject('window2', 'furniture', 'images/window.jpg', 300, 10, $scene);
+                gameObjects.push($window2);
+
+                $window3 = renderInteractableObject('window3', 'furniture', 'images/window.jpg', 400, 10, $scene);
+                gameObjects.push($window3);
 
                 // var url = "data/conversation.json";
                 var url = "rest/statements.php?parentID=";
