@@ -8,10 +8,13 @@
         <script>
             $(document).ready(function(){
 
-              
+              getAgentVoices();
 
 
-
+              var url = "rest/statements.php?parentID=";
+              $.get(url, function(data){
+                  if(data){
+                      next(data.statements[0]);
 
                     }
                 });
