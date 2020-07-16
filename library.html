@@ -10,6 +10,23 @@
 
               getAgentVoices();
 
+              $scene = $("#pizzeria");
+              $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
+              $(document).keydown(movePlayer);
+
+              $waiter = renderInteractableObject('waiter', 'character npc', 'images/waiter_male.png', 350, 300, $scene);
+              flipObjectX($waiter, -1);
+              gameObjects.push($waiter);
+
+
+
+
+
+
+
+
+
+
 
               var url = "rest/statements.php?parentID=";
               $.get(url, function(data){
