@@ -10,22 +10,13 @@
 
               getAgentVoices();
 
-              $scene = $("#pizzeria");
+              $scene = $("#bookstore");
               $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
               $(document).keydown(movePlayer);
 
-              $waiter = renderInteractableObject('waiter', 'character npc', 'images/waiter_male.png', 350, 300, $scene);
-              flipObjectX($waiter, -1);
-              gameObjects.push($waiter);
-
-
-
-
-
-
-
-
-
+              $librarian = renderInteractableObject('librarian', 'character npc', 'images/librarian.png', 350, 300, $scene);
+              flipObjectX($librarian, -1);
+              gameObjects.push($librarian);
 
 
               var url = "rest/statements.php?parentID=";
@@ -39,7 +30,7 @@
         </script>
     </head>
     <body>
-        <div id="pizzeria">
+        <div id="bookstore">
         </div>
         <div id="response">
             <input type='text' id="responseText" onkeypress="captureTextInput(event);" />
