@@ -10,14 +10,28 @@
 
               getAgentVoices();
 
-              $scene = $("#bookstore");
+              $scene = $("#pizzeria");
               $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
               $(document).keydown(movePlayer);
 
               $librarian = renderInteractableObject('librarian', 'character npc', 'images/librarian.png', 350, 300, $scene);
-            
               gameObjects.push($librarian);
 
+              $desk1 = renderInteractableObject('desk1', 'furniture', 'images/desk2.jpg', 300, 400, $scene);
+              gameObjects.push($desk1);
+              desk1.style.width = 200 + "px";
+              $desk2 = renderInteractableObject('desk2', 'furniture', 'images/desk2.jpg', 700, 400, $scene);
+              gameObjects.push($desk2);
+              desk2.style.width = 200 + "px";
+              $desk3 = renderInteractableObject('desk3', 'furniture', 'images/desk2.jpg', 300, 500, $scene);
+              gameObjects.push($desk1);
+              desk3.style.width = 200 + "px";
+              $desk4 = renderInteractableObject('desk4', 'furniture', 'images/desk2.jpg', 700, 500, $scene);
+              gameObjects.push($desk2);
+              desk4.style.width = 200 + "px";
+              $shelf1 = renderInteractableObject('shelf1', 'character npc', 'images/bshelf.jpg', 100, 100, $scene);
+              gameObjects.push($shelf1);
+              shelf1.style.width = 300 + "px";
 
               var url = "rest/statements.php?parentID=";
               $.get(url, function(data){
@@ -30,7 +44,7 @@
         </script>
     </head>
     <body>
-        <div id="bookstore">
+        <div id="pizzeria">
         </div>
         <div id="response">
             <input type='text' id="responseText" onkeypress="captureTextInput(event);" />
