@@ -14,12 +14,12 @@
               $player = renderInteractableObject('player', 'character player', 'images/player_male.png', 280, 300, $scene);
               $(document).keydown(movePlayer);
 
-              // $librarian = renderInteractableObject('librarian', 'character npc', 'images/librarian.png', 350, 300, $scene);
-              // gameObjects.push($librarian);
+              $librarian = renderInteractableObject('librarian', 'character npc', 'images/librarian.png', 350, 300, $scene);
+              gameObjects.push($librarian);
 
-              $waiter = renderInteractableObject('waiter', 'character npc', 'images/waiter_male.png', 350, 300, $scene);
-              // flipObjectX($waiter, -1);
-              gameObjects.push($waiter);
+              // $waiter = renderInteractableObject('waiter', 'character npc', 'images/waiter_male.png', 350, 300, $scene);
+              // // flipObjectX($waiter, -1);
+              // gameObjects.push($waiter);
 
               $desk1 = renderInteractableObject('desk1', 'furniture', 'images/desk2.jpg', 300, 400, $scene);
               gameObjects.push($desk1);
@@ -33,9 +33,32 @@
               $desk4 = renderInteractableObject('desk4', 'furniture', 'images/desk2.jpg', 700, 500, $scene);
               gameObjects.push($desk2);
               desk4.style.width = 200 + "px";
-              $shelf1 = renderInteractableObject('shelf1', 'character npc', 'images/bshelf2.jpg', 100, 700, $scene);
+
+              $shelf1 = renderInteractableObject('shelf1', 'furniture', 'images/bshelf.jpg', 200, 75, $scene);
               gameObjects.push($shelf1);
-              shelf1.style.width = 300 + "px";
+              shelf1.style.width = 100 + "px";
+              $shelf2 = renderInteractableObject('shelf2', 'furniture', 'images/bshelf.jpg', 400, 75, $scene);
+              gameObjects.push($shelf2);
+              shelf2.style.width = 100 + "px";
+              $shelf3 = renderInteractableObject('shelf3', 'furniture', 'images/bshelf.jpg', 600, 75, $scene);
+              gameObjects.push($shelf3);
+              shelf3.style.width = 100 + "px";
+              $shelf4 = renderInteractableObject('shelf4', 'furniture', 'images/bshelf.jpg', 800, 75, $scene);
+              gameObjects.push($shelf4);
+              shelf4.style.width = 100 + "px";
+
+              $couch = renderInteractableObject('couch', 'furniture', 'images/couch.jpg', 1000, 200, $scene);
+              gameObjects.push($couch);
+              couch.style.width = 50 + "px";
+              $couch2 = renderInteractableObject('couch2', 'furniture', 'images/couch.jpg', 1000, 400, $scene);
+              gameObjects.push($couch2);
+              couch2.style.width = 50 + "px";
+
+              $table = renderInteractableObject('table', 'furniture', 'images/desk.jpg', 100, 200, $scene);
+              gameObjects.push($table);
+              $table2 = renderInteractableObject('table2', 'furniture', 'images/desk.jpg', 100, 300, $scene);
+              gameObjects.push($table2);
+
 
               var url = "rest/statements.php?parentID=";
               $.get(url, function(data){
